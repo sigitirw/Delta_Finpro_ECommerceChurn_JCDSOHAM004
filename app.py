@@ -179,27 +179,58 @@ else:
         st.subheader("👤 Single Customer Prediction")
 
         with st.form("single_prediction_form"):
-            input_data = {}
+    input_data = {}
 
-            for col in FEATURE_COLUMNS:
-                if col in cat_cols:
-                    input_data[col] = st.selectbox(
-                        col,
-                        unique_values[col]
-                    )
-                else:
-                    min_val = float(df[col].min())
-                    max_val = float(df[col].max())
-                    mean_val = float(df[col].mean())
+    for col in FEATURE_COLUMNS:
 
-                    input_data[col] = st.slider(
-                        col,
-                        min_value=min_val,
-                        max_value=max_val,
-                        value=mean_val
-                    )
+        # -------------------------
+        # CATEGORICAL FEATURES
+        # -------------------------
+        if col in cat_cols:
+            input_data[col] = st.selectbox(
+                label=col,
+                options=unique_values[col]
+            )
 
-            submitted = st.form_submit_button("Predict Churn")
+        # -------------------------
+        # BINARY
+        # -------------------------
+        elif col == "Complain":
+            input_data[col] = st.selectbox(
+                label=col,
+                options=[0, 1],
+                help="0 = No Complaint, 1 = Complaint"
+            )
+
+        # -------------------------
+        # ORDINAL
+        # -------------------------
+        elif col == "CityTier":
+            input_data[col] = st.selectbox(
+                label=col,
+                options=[1, 2, 3]
+            )
+
+        elif col == "SatisfactionScore":
+            input_data[col] = st.selectbox(
+                label=col,
+                options=[1, 2, 3, 4, 5]
+            )
+
+        # -------------------------
+        # NUMERICAL (FREE INPUT)
+        # -------------------------
+        else:
+            input_data[col] = st.number_input(
+                label=col,
+                min_value=float(df[col].min()),
+                max_value=float(df[col].max()),
+                value=float(df[col].median()),
+                step=1.0
+            )
+
+        submitted = st.form_submit_button("Predict Churn")
+
 
         if submitted:
             input_df = pd.DataFrame([input_data])
