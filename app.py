@@ -46,7 +46,7 @@ st.markdown(
 # =====================================================
 # CONSTANTS
 # =====================================================
-DATA_PATH = Path("ecommerce_churn.xlsx")
+DATA_PATH = Path("EcommerceChurnCleaned.csv")
 MODEL_PATH = Path("ECommerceChurn.pkl")
 
 FEATURE_COLUMNS = [
