@@ -179,7 +179,7 @@ else:
         st.subheader("👤 Single Customer Prediction")
 
         with st.form("single_prediction_form"):
-    input_data = {}
+            input_data = {}
 
     for col in FEATURE_COLUMNS:
 
