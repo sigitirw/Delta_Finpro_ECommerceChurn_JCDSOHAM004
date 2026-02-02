@@ -171,79 +171,83 @@ else:
 
     tab1, tab2 = st.tabs(["👤 Single Prediction", "📂 Bulk Prediction"])
 
-    # -------------------------------------------------
-    # SINGLE CUSTOMER PREDICTION
-    # -------------------------------------------------
-    with tab1:
+# -------------------------------------------------
+# SINGLE CUSTOMER PREDICTION
+# -------------------------------------------------
+with tab1:
 
-        st.subheader("👤 Single Customer Prediction")
+    st.subheader("👤 Single Customer Prediction")
 
-        with st.form("single_prediction_form"):
-            input_data = {}
+    with st.form("single_prediction_form"):
+        input_data = {}
 
-    for col in FEATURE_COLUMNS:
+        for col in FEATURE_COLUMNS:
 
-        # -------------------------
-        # CATEGORICAL FEATURES
-        # -------------------------
-        if col in cat_cols:
-            input_data[col] = st.selectbox(
-                label=col,
-                options=unique_values[col]
-            )
+            # -------------------------
+            # CATEGORICAL FEATURES
+            # -------------------------
+            if col in cat_cols:
+                input_data[col] = st.selectbox(
+                    label=col,
+                    options=unique_values[col]
+                )
 
-        # -------------------------
-        # BINARY
-        # -------------------------
-        elif col == "Complain":
-            input_data[col] = st.selectbox(
-                label=col,
-                options=[0, 1],
-                help="0 = No Complaint, 1 = Complaint"
-            )
+            # -------------------------
+            # BINARY
+            # -------------------------
+            elif col == "Complain":
+                input_data[col] = st.selectbox(
+                    label=col,
+                    options=[0, 1],
+                    help="0 = No Complaint, 1 = Complaint"
+                )
 
-        # -------------------------
-        # ORDINAL
-        # -------------------------
-        elif col == "CityTier":
-            input_data[col] = st.selectbox(
-                label=col,
-                options=[1, 2, 3]
-            )
+            # -------------------------
+            # ORDINAL
+            # -------------------------
+            elif col == "CityTier":
+                input_data[col] = st.selectbox(
+                    label=col,
+                    options=[1, 2, 3]
+                )
 
-        elif col == "SatisfactionScore":
-            input_data[col] = st.selectbox(
-                label=col,
-                options=[1, 2, 3, 4, 5]
-            )
+            elif col == "SatisfactionScore":
+                input_data[col] = st.selectbox(
+                    label=col,
+                    options=[1, 2, 3, 4, 5]
+                )
 
-        # -------------------------
-        # NUMERICAL (FREE INPUT)
-        # -------------------------
-        else:
-            input_data[col] = st.number_input(
-                label=col,
-                min_value=float(df[col].min()),
-                max_value=float(df[col].max()),
-                value=float(df[col].median()),
-                step=1.0
-            )
+            # -------------------------
+            # NUMERICAL (FREE INPUT)
+            # -------------------------
+            else:
+                input_data[col] = st.number_input(
+                    label=col,
+                    min_value=float(df[col].min()),
+                    max_value=float(df[col].max()),
+                    value=float(df[col].median()),
+                    step=1.0
+                )
 
+        # ✅ SUBMIT BUTTON HARUS DI SINI (1x, di dalam form)
         submitted = st.form_submit_button("Predict Churn")
 
+    # -------------------------------------------------
+    # PREDICTION RESULT (DI LUAR FORM)
+    # -------------------------------------------------
+    if submitted:
+        input_df = pd.DataFrame([input_data])
 
-        if submitted:
-            input_df = pd.DataFrame([input_data])
+        pred = model.predict(input_df)[0]
+        prob = model.predict_proba(input_df)[0][1]
 
-            pred = model.predict(input_df)[0]
-            prob = model.predict_proba(input_df)[0][1]
+        if pred == 1:
+            st.error("🚨 **Churn Predicted**")
+            st.metric("Churn Probability", f"{prob*100:.2f}%")
+        else:
+            st.success("✅ **Not Churn**")
+            st.metric("Churn Probability", f"{prob*100:.2f}%")
 
-            if pred == 1:
-                st.error(f"🚨 **Churn Predicted**")
-                st.metric("Churn Probability", f"{prob*100:.2f}%")
-            else:
-                st.success(f"✅ **Not Churn**")
-                st.metric("Churn Probability", f"{prob*100:.2f}%")
 
     # -------------------------------------------------
     # BULK PREDICTION
