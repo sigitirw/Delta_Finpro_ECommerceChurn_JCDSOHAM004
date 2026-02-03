@@ -75,7 +75,7 @@ def set_background(image_path):
         }}
 
         section.main > div {{
-            background-color: rgbargba(0, 0, 0, 0.45);
+            background-color: rgba(0, 0, 0, 0.45);
             padding: 2rem;
             border-radius: 14px;
             margin-top: 1.5rem;
@@ -119,7 +119,7 @@ def apply_text_style():
 def main():
     BASE_DIR = Path(__file__).parent
     set_background(BASE_DIR / "assets" / "Streamlit.png")
-
+    apply_text_style()
     
     # ======================================================
     # HEADER WITH LOGO
