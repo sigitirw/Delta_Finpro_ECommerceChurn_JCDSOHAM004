@@ -58,8 +58,37 @@ def load_model():
 # ==========================================================
 # MAIN APP
 # ==========================================================
-def main():
+import base64
 
+def set_background(image_path):
+    with open(image_path, "rb") as img_file:
+        encoded = base64.b64encode(img_file.read()).decode()
+
+    st.markdown(
+        f"""
+        <style>
+        .stApp {{
+            background-image: url("data:image/png;base64,{encoded}");
+            background-size: cover;
+            background-position: top center;
+            background-repeat: no-repeat;
+        }}
+
+        section.main > div {{
+            background-color: rgba(255, 255, 255, 0.90);
+            padding: 2rem;
+            border-radius: 14px;
+            margin-top: 1.5rem;
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
+
+def main():
+    BASE_DIR = Path(__file__).parent
+    set_background(BASE_DIR / "assets" / "Streamlit.png")
     # ======================================================
     # CUSTOM CSS (BACKGROUND & LAYOUT)
     # ======================================================
