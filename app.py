@@ -56,12 +56,13 @@ def load_model():
 
 def main():
     st.title("📉 Customer Churn Prediction – E-Commerce")
-    st.markdown(""
+    st.markdown("""
     Aplikasi ini digunakan untuk **memprediksi kemungkinan customer churn**
     menggunakan model **XGBoost** yang dioptimalkan dengan **F2 Score**.
 
     Fokus utama: **mendeteksi churn sedini mungkin** untuk mendukung strategi retensi.
     """)
+
 
     df = load_data()
     model = load_model()
