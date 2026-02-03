@@ -64,26 +64,26 @@ def main():
     # CUSTOM CSS (BACKGROUND & LAYOUT)
     # ======================================================
     st.markdown(
-        """
-        <style>
-        .stApp {
-            background-image: url("assets/Streamlit.png");
-            background-size: cover;
-            background-position: top center;
-            background-repeat: no-repeat;
-        }
+    """
+    <style>
+    .stApp {
+        background-image: url("assets/Streamlit.png");
+        background-size: cover;
+        background-position: top center;
+        background-repeat: no-repeat;
+    }
 
-        section.main > div {
-            background-color: rgba(255, 255, 255, 0.90);
-            padding: 2rem;
-            border-radius: 14px;
-            margin-top: 1.5rem;
-        }
+    section.main > div {
+        background-color: rgba(255, 255, 255, 0.90);
+        padding: 2rem;
+        border-radius: 14px;
+        margin-top: 1.5rem;
+    }
 
-        header {visibility: hidden;}
-        </style>
-        """,
-        unsafe_allow_html=True
+    /* JANGAN sembunyikan header → sidebar toggle ada di sini */
+    </style>
+    """,
+    unsafe_allow_html=True
     )
 
     # ======================================================
