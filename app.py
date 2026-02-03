@@ -44,7 +44,7 @@ def load_data():
 
 def load_model():
     BASE_DIR = Path(__file__).parent
-    MODEL_PATH = BASE_DIR / "EcommerceChurn.pkl"
+    MODEL_PATH = BASE_DIR / "ECommerceChurn.pkl"
     return joblib.load(MODEL_PATH)
 
 
