@@ -130,11 +130,13 @@ def main():
         else:
             st.success(f"✅ Customer TIDAK churn (Probabilitas churn: {probability:.2%})")
 
-        st.markdown(""
-        ### 📌 Interpretasi
-        - Model dioptimalkan menggunakan **F2 Score**
-        - False Negative ditekan seminimal mungkin
-        - Cocok untuk **early warning retention system**
+        st.markdown("""
+        ### 📉 Customer Churn Prediction – E-Commerce
+
+        Model ini:
+        - Dioptimalkan menggunakan **F2 Score**
+        - Fokus meminimalkan **False Negative**
+        - Digunakan sebagai **early warning system**
         """)
 
 
