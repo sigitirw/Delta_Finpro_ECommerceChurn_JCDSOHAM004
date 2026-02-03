@@ -89,27 +89,20 @@ def apply_text_style():
     st.markdown(
         """
         <style>
-        /* ===============================
-           MAIN CONTENT TEXT COLOR
-           =============================== */
+        /* FORCE MAIN CONTENT TEXT COLOR /
+        section.main {
+            color: #F5F5F0 !important;
+        }
+
         section.main h1,
         section.main h2,
         section.main h3 {
-            color: #FFFFFF;
+            color: #FFFFFF !important;
         }
 
-        section.main p,
-        section.main label,
-        section.main span,
-        section.main div {
-            color: #F5F5F0;
-        }
-
-        /* ===============================
-           KEEP SIDEBAR DEFAULT
-           =============================== */
-        section[data-testid="stSidebar"] * {
-            color: inherit;
+        /* Keep sidebar default /
+        section[data-testid="stSidebar"] {
+            color: inherit !important;
         }
         </style>
         """,
