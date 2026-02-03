@@ -89,31 +89,20 @@ def set_background(image_path):
 def main():
     BASE_DIR = Path(__file__).parent
     set_background(BASE_DIR / "assets" / "Streamlit.png")
-    # ======================================================
-    # CUSTOM CSS (BACKGROUND & LAYOUT)
-    # ======================================================
-    st.markdown(
-        """
-        <style>
-        .stApp {
-            background-image: url("assets/Streamlit.png");
-            background-size: cover;
-            background-position: top center;
-            background-repeat: no-repeat;
-        }
 
-        section.main > div {
-            background-color: rgba(255, 255, 255, 0.90);
-            padding: 2rem;
-            border-radius: 14px;
-            margin-top: 1.5rem;
-        }
+    # ==============================
+    # HEADER & CONTENT
+    # ==============================
+    col_logo, col_title = st.columns([1, 6])
 
-        header {visibility: visible;}
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
+    with col_logo:
+        st.image("assets/Logo_Delta.png", width=120)
+
+    with col_title:
+        st.markdown("""
+        # 📉 Customer Churn Prediction
+        ### Online E-Commerce Retention Early Warning System
+        """)
 
     # ======================================================
     # HEADER WITH LOGO
