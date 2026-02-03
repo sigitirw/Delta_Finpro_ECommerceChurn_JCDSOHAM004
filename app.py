@@ -94,6 +94,10 @@ def main():
     # ======================================================
     # HEADER WITH LOGO
     # ======================================================
+    st.markdown("""
+    # 📉 Online E-Commerce Churn Prediction
+    ### Retention Early Warning System
+    """)
     
     st.markdown(
         """
