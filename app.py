@@ -94,17 +94,7 @@ def main():
     # ======================================================
     # HEADER WITH LOGO
     # ======================================================
-    col_logo, col_title = st.columns([1, 6])
-
-    with col_logo:
-        st.image("assets/Logo_Delta.png", width=120)
-
-    with col_title:
-        st.markdown("""
-        # 📉 Customer Churn Prediction  
-        ### Online E-Commerce Retention Early Warning System
-        """)
-
+    
     st.markdown(
         """
         Model ini digunakan untuk **mengidentifikasi pelanggan berisiko churn**
