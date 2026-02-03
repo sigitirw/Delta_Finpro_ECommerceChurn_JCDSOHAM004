@@ -75,7 +75,7 @@ def set_background(image_path):
         }}
 
         section.main > div {{
-            background-color: rgba(255, 255, 255, 0.90);
+            background-color: rgbargba(0, 0, 0, 0.45);
             padding: 2rem;
             border-radius: 14px;
             margin-top: 1.5rem;
@@ -85,6 +85,36 @@ def set_background(image_path):
         unsafe_allow_html=True
     )
 
+def apply_text_style():
+    st.markdown(
+        """
+        <style>
+        /* ===============================
+           MAIN CONTENT TEXT COLOR
+           =============================== */
+        section.main h1,
+        section.main h2,
+        section.main h3 {
+            color: #FFFFFF;
+        }
+
+        section.main p,
+        section.main label,
+        section.main span,
+        section.main div {
+            color: #F5F5F0;
+        }
+
+        /* ===============================
+           KEEP SIDEBAR DEFAULT
+           =============================== */
+        section[data-testid="stSidebar"] * {
+            color: inherit;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
 
 def main():
     BASE_DIR = Path(__file__).parent
