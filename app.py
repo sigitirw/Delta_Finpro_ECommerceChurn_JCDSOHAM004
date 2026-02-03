@@ -90,20 +90,7 @@ def main():
     BASE_DIR = Path(__file__).parent
     set_background(BASE_DIR / "assets" / "Streamlit.png")
 
-    # ==============================
-    # HEADER & CONTENT
-    # ==============================
-    col_logo, col_title = st.columns([1, 6])
-
-    with col_logo:
-        st.image("assets/Logo_Delta.png", width=120)
-
-    with col_title:
-        st.markdown("""
-        # 📉 Customer Churn Prediction
-        ### Online E-Commerce Retention Early Warning System
-        """)
-
+    
     # ======================================================
     # HEADER WITH LOGO
     # ======================================================
