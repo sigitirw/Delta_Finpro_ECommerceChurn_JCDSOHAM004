@@ -20,7 +20,7 @@ st.set_page_config(
 
 def load_data():
     BASE_DIR = Path(__file__).parent
-    DATA_PATH = BASE_DIR / "ECommerceChurnCleaned.csv"
+    DATA_PATH = BASE_DIR / "EcommerceChurnCleaned.csv"
 
     df = pd.read_csv(DATA_PATH)
 
