@@ -14,7 +14,7 @@ st.set_page_config(
 st.markdown(
     """
     <style>
-    header {visibility: hidden;}
+    header {visibility: visible;}
     </style>
     """,
     unsafe_allow_html=True
