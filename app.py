@@ -11,7 +11,14 @@ st.set_page_config(
     page_icon="./assets/Logo_Delta.png",
     layout="wide"
 )
-
+st.markdown(
+    """
+    <style>
+    header {visibility: hidden;}
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 # ==========================================================
 # DATA LOADING
 # ==========================================================
