@@ -8,7 +8,7 @@ import joblib
 # ==========================================================
 st.set_page_config(
     page_title="Online E-Commerce Churn Prediction",
-    page_icon="📉",
+    page_icon="./assets/Logo_Delta.png",
     layout="wide"
 )
 
@@ -120,6 +120,7 @@ def main():
     # SIDEBAR
     # ======================================================
     with st.sidebar:
+        st.sidebar.image("./assets/Logo_Delta.png", use_column_width=True)
         st.markdown("## 🧠 Model Information")
         st.markdown("""
         - Algorithm: **XGBoost**
