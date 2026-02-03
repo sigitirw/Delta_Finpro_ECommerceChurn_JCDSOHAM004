@@ -100,3 +100,5 @@ Model tidak dimaksudkan sebagai satu-satunya dasar pengambilan keputusan tanpa p
 readme_customer_churn_prediction_ml_shap.md
 
 Link Tableau : https://public.tableau.com/views/Delta-MedinaSigitSalsa-OnlineEcommerce_17701309767490/Dashboard12?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+
+Link Streamlite : https://deltafinproecommercechurnjcdsoham004-macvgkdkdtaudqeyknc78b.streamlit.app
