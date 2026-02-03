@@ -161,6 +161,13 @@ def main():
                         value=3
                     )
 
+                elif col == "CityTier":
+                    input_data[col] = st.slider(
+                        "City Tier",
+                        min_value=1,
+                        max_value=3,
+                        value=1
+                    )
                 elif df[col].dtype == "int64":
                     input_data[col] = st.number_input(
                         col,
