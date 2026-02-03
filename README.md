@@ -98,3 +98,5 @@ Model dan analisis dalam notebook ini ditujukan sebagai:
 
 Model tidak dimaksudkan sebagai satu-satunya dasar pengambilan keputusan tanpa pertimbangan bisnis lanjutan.
 readme_customer_churn_prediction_ml_shap.md
+
+Link Tableau : https://public.tableau.com/views/Delta-MedinaSigitSalsa-OnlineEcommerce_17701309767490/Dashboard12?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
