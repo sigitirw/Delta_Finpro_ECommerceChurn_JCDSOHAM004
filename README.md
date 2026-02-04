@@ -104,6 +104,10 @@ Model dan analisis dalam notebook ini ditujukan sebagai:
 Model tidak dimaksudkan sebagai satu-satunya dasar pengambilan keputusan tanpa pertimbangan bisnis lanjutan.
 readme_customer_churn_prediction_ml_shap.md
 
-Link Tableau : Dashboard: https://public.tableau.com/views/FinalTeamDelta-MedinaSigitSalsa-OnlineEcommerce/Dashboard12?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
-Story: https://public.tableau.com/views/StoryDelta-MedinaSigitSalsa-OnlineEcommerce/ChurnFlowChart?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
-Link Streamlite : https://deltafinproecommercechurnjcdsoham004-macvgkdkdtaudqeyknc78b.streamlit.app
+- Link Tableau : 
+
+1). Dashboard: https://public.tableau.com/views/FinalTeamDelta-MedinaSigitSalsa-OnlineEcommerce/Dashboard12?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+
+2). Story: https://public.tableau.com/views/StoryDelta-MedinaSigitSalsa-OnlineEcommerce/ChurnFlowChart?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+
+- Link Streamlit : https://deltafinproecommercechurnjcdsoham004-macvgkdkdtaudqeyknc78b.streamlit.app
